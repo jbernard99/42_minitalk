@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:24:12 by jbernard          #+#    #+#             */
-/*   Updated: 2022/03/09 10:34:26 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:10:02 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 void    signal_handler(int signal)
 {
-    static int  bit;
-    static char c;
-
-    bit = 0;
-    c = 0;
+    static int  bit = 0;
+    static char c = 0;
+  
     if (signal == SIGUSR1)
         c |= (1 << bit);
     bit++;

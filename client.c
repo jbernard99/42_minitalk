@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:23:52 by jbernard          #+#    #+#             */
-/*   Updated: 2022/03/09 10:32:26 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/03/09 11:11:06 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 void    signal_char(pid_t pid, char c)
 {
 	int bit;
-
+	
 	bit = 0;
-	printf("pid : %d\nc : %c", pid, c);
 	while (bit < 8)
 	{
 		if (c & (1 << bit))
