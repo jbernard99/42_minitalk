@@ -6,17 +6,16 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 10:23:52 by jbernard          #+#    #+#             */
-/*   Updated: 2022/03/09 11:11:06 by jbernard         ###   ########.fr       */
+/*   Updated: 2022/03/21 09:30:30 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-
-void    signal_char(pid_t pid, char c)
+void	signal_char(pid_t pid, char c)
 {
-	int bit;
-	
+	int	bit;
+
 	bit = 0;
 	while (bit < 8)
 	{
@@ -29,9 +28,9 @@ void    signal_char(pid_t pid, char c)
 	}
 }
 
-void    send_message(pid_t pid, char *str)
+void	send_message(pid_t pid, char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -42,10 +41,10 @@ void    send_message(pid_t pid, char *str)
 	signal_char(pid, '\0');
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	pid_t   pid;
-	char    *str;
+	pid_t	pid;
+	char	*str;
 
 	if (argc == 3)
 	{
@@ -57,4 +56,3 @@ int main(int argc, char *argv[])
 		ft_putstr("Error!\n");
 	return (0);
 }
-
